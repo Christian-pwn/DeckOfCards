@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!--
-        <script src="docw.js"></script>
-    -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="scripts/bootstrap.min.5.3.0-alpha1.css" rel="stylesheet">
+    <script src="scripts/bootstrap.min.5.3.0-alpha1.js"></script>
+    <script src="docw.js"></script>
     <title>Deck of Cards</title>
 </head>
+
 <body>
-    <p>Text</p>
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    -->
-    <script src="scripts/bootstrap.min.5.3.0-alpha1.js"></script>
+    <div class="container">
+        <h1>Deck of Cards Workout</h1>
+    </div>
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label for="heartsWO" class="form-label">Hearts</label>
+                <input type="text" class="form-control" id="heartsWO" value="Push Ups">
+            </div>
+            <div class="mb-3">
+                <label for="diamondsWO" class="form-label">Diamonds</label>
+                <input type="text" class="form-control" id="diamondsWO" value="Pull Ups">
+            </div>
+            <div class="mb-3">
+                <label for="spadesWO" class="form-label">Spades</label>
+                <input type="text" class="form-control" id="spadesWO" value="Sit Ups">
+            </div>
+            <div class="mb-3">
+                <label for="clubsWO" class="form-label">Clubs</label>
+                <input type="text" class="form-control" id="clubsWO" value="Kettle Bell Swings as">
+            </div>
+            <div class="mb-3">
+                <label for="jokersWO" class="form-label">Jokers</label>
+                <input type="text" class="form-control" id="jokersWO" value="Burpees">
+            </div>
+            <div class="mb-3">
+                <label for="timecap" class="form-label">Time cap</label>
+                <input type="time" class="form-control" id="timecap" step="2" value="00:30:00">
+            </div>
+        </form>
+        <a href="#" class="btn btn-primary" onclick="docwStart()">Start</a>
+    </div>
+
 </body>
+
 </html>
