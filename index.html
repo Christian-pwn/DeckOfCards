@@ -4,44 +4,57 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="scripts/bootstrap.min.5.3.0-alpha1.css" rel="stylesheet">
-    <script src="scripts/bootstrap.min.5.3.0-alpha1.js"></script>
     <title>Deck of Cards</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .displaynone {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container" id="setupContainer">
+    <div id="setupContainer">
         <h1>Deck of Cards Workout</h1>
         <form>
-            <div class="mb-3">
+            <div>
                 <label for="woHearts" class="form-label">Hearts</label>
                 <input type="text" class="form-control" id="woHearts" value="Push Ups">
             </div>
-            <div class="mb-3">
+            <div>
                 <label for="woDiamonds" class="form-label">Diamonds</label>
                 <input type="text" class="form-control" id="woDiamonds" value="Pull Ups">
             </div>
-            <div class="mb-3">
+            <div>
                 <label for="woSpades" class="form-label">Spades</label>
                 <input type="text" class="form-control" id="woSpades" value="Sit Ups">
             </div>
-            <div class="mb-3">
+            <div>
                 <label for="woClubs" class="form-label">Clubs</label>
                 <input type="text" class="form-control" id="woClubs" value="Kettle Bell Swings">
             </div>
-            <div class="mb-3">
+            <div>
                 <label for="woJokers" class="form-label">Jokers</label>
                 <input type="text" class="form-control" id="woJokers" value="Burpees">
             </div>
+            <div>
+                <input type="button" onclick="docwStart()" value="Start">
+            </div>
         </form>
-        <a href="#" class="btn btn-primary" onclick="docwStart()">Start</a>
     </div>
-    <div class="container d-none" id="woContainer">
+    <div class="displaynone" id="woContainer">
         <h1 id="woText">Workout</h1>
         <p><a href="#" onclick="woNext()"><span style="font-size: 1000%; color:red" id="woCard">🂻</span></a></p>
-        <p><a href="#" class="btn btn-primary" onclick="woNext()">Next</a></p>
+        <p><input type="button" onclick="woNext()" value="Next"></p>
         <p id="woNum">23/42</p>
-        <p><a href="#" class="btn btn-primary" onclick="docwSetup()">Cancel</a></p>
+        <p><input type="button" onclick="docwSetup()" value="Cancel"></p>
+    </div>
+    <div class="displaynone" id="finContainer">
+        <h1>Workout Finished!</h1>
+        <p><input type="button" onclick="docwSetup()" value="Start over"></p>
     </div>
     <script src="docw.js"></script>
 </body>

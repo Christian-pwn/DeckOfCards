@@ -11,14 +11,15 @@ randomdeck.sort((a, b) => Math.random() - 0.5)
 
 var setupContainer = document.getElementById('setupContainer')
 var woContainer = document.getElementById('woContainer')
+var finContainer = document.getElementById('finContainer')
 var woCard = document.getElementById('woCard')
 var woText = document.getElementById('woText')
 var woNum = document.getElementById('woNum')
 var woHearts = document.getElementById('woHearts')
-var woDiamonds= document.getElementById('woDiamonds')
-var woSpades= document.getElementById('woSpades')
-var woClubs= document.getElementById('woClubs')
-var woJokers= document.getElementById('woJokers')
+var woDiamonds = document.getElementById('woDiamonds')
+var woSpades = document.getElementById('woSpades')
+var woClubs = document.getElementById('woClubs')
+var woJokers = document.getElementById('woJokers')
 var cardNum = 0;
 
 function docwStart() {
@@ -28,40 +29,44 @@ function docwStart() {
 }
 
 function docwSetup() {
-        cardNum = 0;
-        setupContainer.classList.remove('d-none')
-        woContainer.classList.add('d-none')
+    cardNum = 0;
+    setupContainer.classList.remove('displaynone')
+    woContainer.classList.add('displaynone')
+    finContainer.classList.add('displaynone')
 }
 
 function woNext() {
-    setupContainer.classList.add('d-none')
-    woContainer.classList.remove('d-none')
+    setupContainer.classList.add('displaynone')
+    woContainer.classList.remove('displaynone')
+    finContainer.classList.add('displaynone')
     deckIdx = randomdeck[cardNum++]
     woCard.innerText = deckarray[deckIdx]
-    woCard.style.color = deckIdx <=26 ? 'black' : 'red'
+    woCard.style.color = deckIdx <= 26 ? 'black' : 'red'
 
-    if(deckIdx < 13) {
+    if (deckIdx < 13) {
         woText.innerText = woSpades.value
     }
-    if(deckIdx >= 13 && deckIdx < 26) {
+    if (deckIdx >= 13 && deckIdx < 26) {
         woText.innerText = woClubs.value
     }
-    if(deckIdx == 26) {
+    if (deckIdx == 26) {
         woText.innerText = woJokers.value
     }
-    if(deckIdx >= 27 && deckIdx < 40) {
+    if (deckIdx >= 27 && deckIdx < 40) {
         woText.innerText = woHearts.value
     }
-    if(deckIdx == 40) {
+    if (deckIdx == 40) {
         woText.innerText = woJokers.value
     }
-    if(deckIdx >= 41) {
+    if (deckIdx >= 41) {
         woText.innerText = woDiamonds.value
     }
 
     woNum.innerText = cardNum + '/' + deckarray.length
 
-    if(cardNum > deckarray.length) {
-        docwSetup()
+    if (cardNum > deckarray.length) {
+        setupContainer.classList.add('displaynone')
+        woContainer.classList.add('displaynone')
+        finContainer.classList.remove('displaynone')
     }
 }
