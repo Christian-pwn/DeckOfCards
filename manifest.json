@@ -1,11 +1,24 @@
 {
     "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-    "name": "Deck of Cards",
-    "short_name": "Deck of Cards",
+    "name": "Deck of Cards Workout",
+    "short_name": "DoCW",
     "start_url": ".",
     "display": "standalone",
+    "theme_color": "#fff",
     "background_color": "#fff",
     "description": "A simple deck of cards workout app.",
     "icons": [
+        {
+            "src": "images/doc.svg",
+            "sizes": "any",
+            "type": "image/svg",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/doc_512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
     ]
 }

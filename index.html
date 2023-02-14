@@ -4,17 +4,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+    <meta name="description" content="Deck of Cards Workout">
     <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="imagges/doc_192.png">
     <title>Deck of Cards</title>
 
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         .displaynone {
             display: none;
         }
+
+        input {
+            padding: 1em
+        }
     </style>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+        }
+    </script>
 </head>
 
 <body>
