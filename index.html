@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="scripts/bootstrap.min.5.3.0-alpha1.css" rel="stylesheet">
-    <script src="scripts/bootstrap.min.5.3.0-alpha1.js"></script>
-    <script src="docw.js"></script>
-    <title>Deck of Cards</title>
-</head>
-
-<body>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="scripts/bootstrap.min.5.3.0-alpha1.css" rel="stylesheet">
+        <script src="scripts/bootstrap.min.5.3.0-alpha1.js"></script>
+        <script src="docw.js"></script>
+        <title>Deck of Cards</title>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Deck of Cards Workout</h1>
+            <div>
+                <h1 style="text-align: center; font-size: 14em" id="cardContainer"></h1>
+            </div>
+        </div>
     <div class="container">
-        <h1>Deck of Cards Workout</h1>
-    </div>
-    <div class="container">
+        <h3 id="workoutText"></h3>
         <form>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="heartsWO" class="form-label">Hearts</label>
                 <input type="text" class="form-control" id="heartsWO" value="Push Ups">
             </div>
@@ -35,15 +39,36 @@
             <div class="mb-3">
                 <label for="jokersWO" class="form-label">Jokers</label>
                 <input type="text" class="form-control" id="jokersWO" value="Burpees">
-            </div>
-            <div class="mb-3">
-                <label for="timecap" class="form-label">Time cap</label>
-                <input type="time" class="form-control" id="timecap" step="2" value="00:30:00">
+            </div> -->
+            <div class="mb-3 row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="timecap" class="form-label">Time cap (seconds)</label>
+                        <input type="text" class="form-control" id="timecap" step="1" value="30">
+                    </div>
+                    <input type="button" id="drawButton" class="btn btn-primary" onclick="docwDraw()" value="Draw Card" />
+                </div>
+                <div class="col-6">
+                    <div class="jumbotron text-center">
+                        <div style="font-size: 80px;">
+                            <span class="minutes">
+                            00
+                            </span>
+                            :
+                            <span class="seconds">
+                            00
+                            </span>
+                        </div>
+                            <div class="time-buttons">
+                                <input type="button" class="btn btn-lg btn-success" data-action="start" onclick="docwStart()" value="Start" />
+                                <input type="button" class="btn btn-lg btn-danger" data-action="stop" onclick="docwStop()" value="Stop" />
+                                <input type="button" class="btn btn-lg btn-link btn-block" data-action="reset" onclick="docwReset()" value="Reset" />
+                            </div>
+                        </div>
+                </div>
             </div>
         </form>
-        <a href="#" class="btn btn-primary" onclick="docwStart()">Start</a>
     </div>
-
 </body>
 
 </html>
